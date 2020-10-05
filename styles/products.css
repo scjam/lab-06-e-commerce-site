@@ -1,4 +1,13 @@
-.drink {
-    width: 400px;
-    padding: 10px;
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    padding: 4px;
+    border: 1px black solid;
+}
+
+.image {
+    max-width: 50%;
+    max-height: auto;
 }

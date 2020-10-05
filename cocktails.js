@@ -1,4 +1,4 @@
-export const drinks = [
+export const cocktails = [
     {
         id: 'pinaColada',
         name: 'Piña colada',
