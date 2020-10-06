@@ -1,7 +1,7 @@
 import { cocktails } from '../cocktails.js';
 import { findById } from '../utils.js';
 
-export function renderTableRow(cartItem) {
+export function renderLineItems(cartItem) {
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     const tdPrice = document.createElement('td');

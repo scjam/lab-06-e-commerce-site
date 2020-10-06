@@ -1,5 +1,6 @@
 import { renderTiki } from '../utils.js';
-import { renderTableRow } from '../cart/cart-utils.js';
+import { renderLineItems } from '../cart/render-line-items.js';
+import { calcLineItem } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -28,7 +29,17 @@ test('should take in a cart item and return a tr element with appropriate conten
 
     const expected = '<tr><td>Zombie</td><td>$12</td><td>2</td><td>$24</td></tr>';
 
-    const actual = renderTableRow(cartItem);
+    const actual = renderLineItems(cartItem);
 
     expect.equal(actual.outerHTML, expected);
+});
+
+test('should take 2 and 12 and return 24', (expect) => {
+    let quantity = 2;
+    let price = 12;
+
+    const expected = 24;
+    const actual = calcLineItem(quantity, price);
+
+    expect.equal(actual, expected);
 });

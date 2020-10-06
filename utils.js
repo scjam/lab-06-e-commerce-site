@@ -8,6 +8,11 @@ export function findById(someArray, someId) {
     }
 }
 
+export function calcLineItem(quantity, price) {
+    return quantity * price;
+
+}
+
 export function renderTiki(drink) {
     const li = document.createElement('li');
     const name = document.createElement('h3');
