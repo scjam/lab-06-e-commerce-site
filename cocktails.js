@@ -1,7 +1,7 @@
 export const cocktails = [
     {
         id: 'pinaColada',
-        name: 'Piña colada',
+        name: 'Piña Colada',
         image: '../assets/pinaColada.jpg',
         description: 'A blended pineapple and coconut classic, originated in Puerto Rico.',
         liquor: 'light rum',
