@@ -1,0 +1,42 @@
+export const cocktails = [
+    {
+        id: 'pinaColada',
+        name: 'Piña colada',
+        image: '../assets/pinaColada.jpg',
+        description: 'A blended pineapple and coconut classic, originated in Puerto Rico.',
+        liquor: 'light rum',
+        price: 8,
+    },
+    {
+        id: 'singaporeSling',
+        name: 'Singapore Sling',
+        image: '../assets/singaporeSling.jpg',
+        description: 'Created by Ngiam Tong Boon around 1915, this is one of the few classic tiki cocktails made without rum.',
+        liquor: 'gin',
+        price: 9,
+    },
+    {
+        id: 'painkiller',
+        name: 'Painkiller',
+        image: '../assets/painkiller.jpg',
+        description: 'Pineapple, orange, high-proof rum and nutmeg make this concoction from the 1970s a lasting favorite.',
+        liquor: 'dark rum',
+        price: 10,
+    },
+    {
+        id: 'jungleBird',
+        name: 'Jungle Bird',
+        image: '../assets/jungleBird.jpg',
+        description: 'Another 1970s cocktail, hailing from Kuala Lumpur, that has the surprising addition of Campari.',
+        liquor: 'dark rum',
+        price: 9,
+    },
+    {    
+        id: 'zombie',
+        name: 'Zombie',
+        image: '../assets/zombie.jpg',
+        description: 'Created by Don Beach in 1934, this cocktail can best be described as high-octane rocket fuel disguised as fruit punch.',
+        liquor: 'dark rum',
+        price: 12,
+    },
+];
