@@ -1,5 +1,5 @@
 import { renderTiki } from '../utils.js';
-import { renderLineItems } from '../cart/render-line-items.js';
+import { renderLineItems } from '../shopping-cart/render-line-items.js';
 import { calcLineItem } from '../utils.js';
 
 const test = QUnit.test;

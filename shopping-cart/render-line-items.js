@@ -1,4 +1,4 @@
-import { cocktails } from '../cocktails.js';
+import { cocktails } from '../data/cocktails.js';
 import { findById } from '../utils.js';
 
 export function renderLineItems(cartItem) {
