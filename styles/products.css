@@ -1,13 +1,20 @@
 .product {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 300px;
-    padding: 4px;
+    padding: 6px;
     border: 1px black solid;
+    text-align: center;
+    margin: 5px;
 }
 
 .image {
     max-width: 50%;
     max-height: auto;
+}
+
+ul {
+    display: flex;
 }

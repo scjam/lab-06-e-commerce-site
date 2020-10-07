@@ -1,3 +1,13 @@
+export function findById(someArray, someId) {
+    for (let i = 0; i < someArray.length; i++) {
+        const item = someArray[i];
+
+        if (item.id === someId) {
+            return item;
+        }
+    }
+}
+
 export function renderTiki(drink) {
     const li = document.createElement('li');
     const name = document.createElement('h3');
@@ -35,4 +45,10 @@ export function renderTiki(drink) {
     li.appendChild(button);
 
     return li;
+}
+
+
+export function calcLineItem(quantity, price) {
+    return quantity * price;
+
 }
