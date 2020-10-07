@@ -7,8 +7,11 @@ const table = document.querySelector('tbody');
 
 for (let i = 0; i < cart.length; i++) {
     const cocktail = cart[i];
-    const tr = renderLineItems(cocktail);
-    table.appendChild(tr);
+
+    if (cocktail.quantity >= 0) {
+        const tr = renderLineItems(cocktail);
+        table.appendChild(tr);
+    }
 }
 
 const total = calcOrderTotal(cart);
