@@ -53,28 +53,8 @@ footer {
     box-shadow: var(--shadow);
 }
 
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
-}
-
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
-}
-
 header img {
     height: var(--header-height);
-}
-
-
-
-content {
-    width: 80%;
 }
 
 p {
