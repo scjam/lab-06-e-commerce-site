@@ -46,11 +46,12 @@ export function renderTiki(drink) {
 
         const cart = getFromLocalStorage('CART') || [];
 
-        const itemInCart = findById(cart, cocktails.id);
+        const itemInCart = findById(cart, drink.id);
+        console.log(itemInCart);
 
         if (itemInCart === undefined) {
             const newCartItem = {
-                id: cocktails.id,
+                id: drink.id,
                 quantity: 1,
             };
 
