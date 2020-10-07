@@ -1,6 +1,9 @@
 import { renderTiki } from '../utils.js';
 import { renderLineItems } from '../shopping-cart/render-line-items.js';
 import { calcLineItem } from '../utils.js';
+// import { calcOrderTotal } from '../shopping-cart/shopping-cart-utils.js';
+// import { cart } from '../data/cart.js';
+// import { cocktails } from '../data/cocktails.js';
 
 const test = QUnit.test;
 
@@ -43,3 +46,13 @@ test('should take 2 and 12 and return 24', (expect) => {
 
     expect.equal(actual, expected);
 });
+
+// test('should take in cart array and products array and return total price of cart', (expect) => {
+//     const cartArray = cart.quantity;
+//     const productArray = cocktails.price;
+    
+//     const expected = 60;
+//     const actual = calcOrderTotal(cartArray, productArray);
+
+//     expect.equal(actual, expected);
+// });
