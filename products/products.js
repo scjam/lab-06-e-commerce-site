@@ -1,4 +1,4 @@
-import { cocktails } from '../cocktails.js';
+import { cocktails } from '../data/cocktails.js';
 import { renderTiki } from '../utils.js';
 
 const ul = document.querySelector('#list');
