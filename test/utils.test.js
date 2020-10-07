@@ -49,7 +49,7 @@ test('should take 2 and 12 and return 24', (expect) => {
 
 test('should take in cart array and products array and return total price of cart', (expect) => {
     
-    const expected = '59';
+    const expected = 59;
     
     const actual = calcOrderTotal(cart, cocktails);
 
