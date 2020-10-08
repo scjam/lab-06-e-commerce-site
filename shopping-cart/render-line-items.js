@@ -1,7 +1,6 @@
-import { cocktails } from '../data/cocktails.js';
 import { findById } from '../utils.js';
 
-export function renderLineItems(cartItem) {
+export function renderLineItems(cartItem, cocktails) {
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     const tdPrice = document.createElement('td');

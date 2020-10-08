@@ -1,5 +1,3 @@
-import { cocktails } from './data/cocktails.js';
-
 export function findById(someArray, someId) {
     for (let i = 0; i < someArray.length; i++) {
         const item = someArray[i];
@@ -17,6 +15,7 @@ export function renderTiki(drink) {
     const description = document.createElement('p');
     const price = document.createElement('p');
     const button = document.createElement('button');
+    const select = document.createElement('select');
 
     li.id = 'pinaColada';
     li.classList.add('drink');
@@ -46,12 +45,12 @@ export function renderTiki(drink) {
 
         const cart = getFromLocalStorage('CART') || [];
 
-        const itemInCart = findById(cart, cocktails.id);
+        const itemInCart = findById(cart, drink.id);
 
         if (itemInCart === undefined) {
             const newCartItem = {
-                id: cocktails.id,
-                quantity: 1,
+                id: drink.id,
+                quantity: select.value,
             };
 
             cart.push(newCartItem);
@@ -63,6 +62,19 @@ export function renderTiki(drink) {
     });
 
     li.appendChild(button);
+    
+    select.classList.add('select');
+    for (let i = 1; i <= 5; i++) {
+        const option = document.createElement('OPTION');
+        option.text = i;
+        option.value = i;
+        select.append(option);
+    }
+    
+    select.addEventListener('change', (e) => {
+        console.log(e.target.value);
+    });
+    li.appendChild(select);
 
     return li;
 }
