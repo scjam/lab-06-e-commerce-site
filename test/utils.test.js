@@ -4,7 +4,7 @@ import { calcLineItem } from '../utils.js';
 import { calcOrderTotal } from '../shopping-cart/shopping-cart-utils.js';
 import { cart } from '../data/cart.js';
 import { cocktails } from '../data/cocktails.js';
-import { addProduct } from '../admin/admin.js';
+import { addProduct } from '../admin/ls-utils.js';
 
 const test = QUnit.test;
 

@@ -1,4 +1,4 @@
-import { cocktails } from '../data/cocktails.js';
+// import { cocktails } from '../data/cocktails.js';
 
 export function findById(someArray, someId) {
     for (let i = 0; i < someArray.length; i++) {
@@ -8,18 +8,6 @@ export function findById(someArray, someId) {
             return item;
         }
     }
-}
-
-export function getLocalStorageDrinks() {
-    let localStorageDrinks = JSON.parse(localStorage.getItem('PRODUCTS'));
-
-    if (!localStorageDrinks) {
-        const stringyDrinks = JSON.stringify(cocktails);
-
-        localStorage.setItem('PRODUCTS', stringyDrinks);
-        localStorageDrinks = cocktails;
-    }
-    return localStorageDrinks;
 }
 
 export function renderTiki(drink) {
