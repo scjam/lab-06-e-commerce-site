@@ -4,6 +4,7 @@ import { calcLineItem } from '../utils.js';
 import { calcOrderTotal } from '../shopping-cart/shopping-cart-utils.js';
 import { cart } from '../data/cart.js';
 import { cocktails } from '../data/cocktails.js';
+import { addProduct } from '../admin/admin.js';
 
 const test = QUnit.test;
 
@@ -54,4 +55,63 @@ test('should take in cart array and products array and return total price of car
     const actual = calcOrderTotal(cart, cocktails);
 
     expect.equal(actual, expected);
+});
+
+test('addProduct should take in a product and add it to localStorage', (expect) => {
+    const newDrink = {
+        name: 'Hula Hero',
+        price: 13
+    };
+    const expected = [
+        {
+            id: 'pinaColada',
+            name: 'Piña Colada',
+            image: '../assets/pinaColada.jpg',
+            description: 'A blended pineapple and coconut classic, originated in Puerto Rico.',
+            liquor: 'light rum',
+            price: 8,
+        },
+        {
+            id: 'singaporeSling',
+            name: 'Singapore Sling',
+            image: '../assets/singaporeSling.jpg',
+            description: 'Created by Ngiam Tong Boon around 1915, this is one of the few classic tiki cocktails made without rum.',
+            liquor: 'gin',
+            price: 9,
+        },
+        {
+            id: 'painkiller',
+            name: 'Painkiller',
+            image: '../assets/painkiller.jpg',
+            description: 'Pineapple, orange, high-proof rum and nutmeg make this concoction from the 1970s a lasting favorite.',
+            liquor: 'dark rum',
+            price: 10,
+        },
+        {
+            id: 'jungleBird',
+            name: 'Jungle Bird',
+            image: '../assets/jungleBird.jpg',
+            description: 'Another 1970s cocktail, hailing from Kuala Lumpur, that has the surprising addition of Campari.',
+            liquor: 'dark rum',
+            price: 9,
+        },
+        {    
+            id: 'zombie',
+            name: 'Zombie',
+            image: '../assets/zombie.jpg',
+            description: 'Created by Don Beach in 1934, this cocktail can best be described as high-octane rocket fuel disguised as fruit punch.',
+            liquor: 'dark rum',
+            price: 12,
+        },
+        {
+            name: 'Hula Hero',
+            price: 13 
+        }
+    ];
+
+    addProduct(newDrink);
+
+    const localStorageAfter = JSON.parse(localStorage.getItem('cocktails'));
+
+    expect.deepEqual(expected, localStorageAfter);
 });
