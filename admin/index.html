@@ -8,17 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/products.css">
-    <title>Product Page</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+    <title>Admin Page</title>
 </head>
 
 <body>
     <header>
         <nav>
             <a href="../index.html">Home</a>
-            <a href="/">Products</a>
+            <a href="../products">Products</a>
             <a href="../shopping-cart">Shopping Cart</a>
-            <a href="../admin">Admin</a>
+            <a href="/">Admin</a>
         </nav>
         <div class="gutter-right logo">
             <img src="../assets/tikiBar.jpg"/>
@@ -26,16 +26,32 @@
     </header>
     <main>
         <section class="main-section">
-            Check out the drinks!
-            <ul id="list"></ul>
-            <a href="../shopping-cart">Shopping Cart</a>
+            Administrative Page
+            <form>
+                <label>
+                    I.D.: <input name="id" />
+                </label>
+                <label>
+                    Name: <input name="name" />
+                </label>
+                <label>
+                    Image: <input name="image" />
+                </label>
+                <label>
+                    Description: <input name="description" />
+                </label>
+                <label>
+                    Price: <input name="price" />
+                </label>
+                <button>Add This Drink!</button>
+            </form>
         </section>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="products.js"></script>
+    <script type="module" src="admin.js"></script>
 </body>
 
 </html>
