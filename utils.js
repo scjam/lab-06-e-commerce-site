@@ -76,6 +76,7 @@ export function renderTiki(drink) {
     select.addEventListener('change', (e) => {
         console.log(e.target.value);
     });
+    
     li.appendChild(select);
 
     return li;
