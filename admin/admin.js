@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) => {
 
     const id = data.get('id');
     const name = data.get('name');
-    const image = data.get('image');
+    const image = ('../assets/placeholder.png');
     const description = data.get('description');
     const price = data.get('price');
 
