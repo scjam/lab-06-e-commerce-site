@@ -2,9 +2,7 @@ import { renderTiki } from '../utils.js';
 import { renderLineItems } from '../shopping-cart/render-line-items.js';
 import { calcLineItem } from '../utils.js';
 import { calcOrderTotal } from '../shopping-cart/shopping-cart-utils.js';
-import { cart } from '../data/cart.js';
-import { cocktails } from '../data/cocktails.js';
-import { addProduct } from '../admin/ls-utils.js';
+import { addProduct, getLocalStorageDrinks } from '../admin/ls-utils.js';
 
 const test = QUnit.test;
 
@@ -18,7 +16,7 @@ test('should take in a drink and return a li with relevant information', (expect
         price: 8,        
     };
 
-    const expected = '<li id="pinaColada" class="drink"><h3 class="name">Piña colada</h3><img class="image" src="../assets/pinaColada.jpg"><p class="description">A blended pineapple and coconut classic, originated in Puerto Rico.</p><p class="price">$8.00</p><button>Add</button></li>';
+    const expected = '<li id="pinaColada" class="drink"><h3 class="name">Piña colada</h3><img class="image" src="../assets/pinaColada.jpg"><p class="description">A blended pineapple and coconut classic, originated in Puerto Rico.</p><p class="price">$8.00</p><button>Add</button><select class="select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></li>';
 
     const actual = renderTiki(drink);
 
@@ -33,7 +31,8 @@ test('should take in a cart item and return a tr element with appropriate conten
 
     const expected = '<tr><td>Zombie</td><td>$12</td><td>2</td><td>$24</td></tr>';
 
-    const actual = renderLineItems(cartItem);
+    const cocktails = getLocalStorageDrinks();
+    const actual = renderLineItems(cartItem, cocktails);
 
     expect.equal(actual.outerHTML, expected);
 });
@@ -49,10 +48,14 @@ test('should take 2 and 12 and return 24', (expect) => {
 });
 
 test('should take in cart array and products array and return total price of cart', (expect) => {
-    
-    const expected = 59;
-    
-    const actual = calcOrderTotal(cart, cocktails);
+    const cart = [{
+        id: 'zombie',
+        quantity: 2,
+    }];
+    const expected = 24;
+    const cocktails = getLocalStorageDrinks();
+
+    const actual = calcOrderTotal(cocktails, cart);
 
     expect.equal(actual, expected);
 });
@@ -111,7 +114,8 @@ test('addProduct should take in a product and add it to localStorage', (expect) 
 
     addProduct(newDrink);
 
-    const localStorageAfter = JSON.parse(localStorage.getItem('cocktails'));
+    const localStorageAfter = JSON.parse(localStorage.getItem('PRODUCTS'));
 
     expect.deepEqual(expected, localStorageAfter);
+
 });

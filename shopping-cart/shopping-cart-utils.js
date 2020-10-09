@@ -1,7 +1,6 @@
 import { findById } from '../utils.js';
-import { cocktails } from '../data/cocktails.js';
 
-export function calcOrderTotal(cartArray) {
+export function calcOrderTotal(cocktails, cartArray) {
     let total = 0;
 
     for (let i = 0; i < cartArray.length; i++) {

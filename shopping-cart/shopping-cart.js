@@ -1,7 +1,8 @@
 import { calcOrderTotal } from '../shopping-cart/shopping-cart-utils.js';
 import { renderLineItems } from '../shopping-cart/render-line-items.js';
 import { getFromLocalStorage } from '../utils.js';
-import { cocktails } from '../data/cocktails.js';
+import { getLocalStorageDrinks } from '../admin/ls-utils.js';
+
 
 const table = document.querySelector('tbody');
 const cart = getFromLocalStorage('CART') || [];
@@ -9,11 +10,13 @@ const cart = getFromLocalStorage('CART') || [];
 for (let i = 0; i < cart.length; i++) {
     const drink = cart[i];
 
-    const tr = renderLineItems(drink, cocktails);
+    const drinksArray = getLocalStorageDrinks();
+    const tr = renderLineItems(drink, drinksArray);
     table.appendChild(tr);
 }
 
-const total = calcOrderTotal(cart);
+const drinksArray = getLocalStorageDrinks();
+const total = calcOrderTotal(drinksArray, cart);
 
 const totalLine = document.querySelector('.total');
 

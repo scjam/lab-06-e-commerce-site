@@ -1,7 +1,7 @@
 import { cocktails } from '../data/cocktails.js';
 
 export function addProduct(newDrink) {
-    const localStorageProducts = getLocalStorage();
+    const localStorageProducts = getLocalStorageDrinks();
 
     localStorageProducts.push(newDrink);
 
@@ -10,7 +10,7 @@ export function addProduct(newDrink) {
     
 }
 
-export function getLocalStorage() {
+export function getLocalStorageDrinks() {
     let localStorageDrinks = JSON.parse(localStorage.getItem('PRODUCTS'));
 
     if (!localStorageDrinks) {
