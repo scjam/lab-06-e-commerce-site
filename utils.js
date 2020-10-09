@@ -1,3 +1,5 @@
+// import { cocktails } from '../data/cocktails.js';
+
 export function findById(someArray, someId) {
     for (let i = 0; i < someArray.length; i++) {
         const item = someArray[i];
@@ -36,7 +38,7 @@ export function renderTiki(drink) {
     li.appendChild(description);
 
     price.classList.add('price');
-    price.textContent = `$${drink.price.toFixed(2)}`;
+    price.textContent = `$${drink.price}`;
 
     li.appendChild(price);
 
@@ -74,6 +76,7 @@ export function renderTiki(drink) {
     select.addEventListener('change', (e) => {
         console.log(e.target.value);
     });
+
     li.appendChild(select);
 
     return li;

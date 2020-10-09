@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../products">Products</a>
+            <a href="../shopping-cart">Shopping Cart</a>
+            <a href="/">Admin</a>
+        </nav>
+        <div class="gutter-right logo">
+            <img src="../assets/tikiBar.jpg"/>
+        </div>
+    </header>
+    <main>
+        <section class="main-section">
+            Administrative Page
+            <form id="addForm">
+                <label>
+                    I.D.: <input name="id" />
+                </label>
+                <label>
+                    Name: <input name="name" />
+                </label>
+                <label>
+                    Image: <input name="image" />
+                </label>
+                <label>
+                    Description: <input name="description" />
+                </label>
+                <label>
+                    Price: <input name="price" />
+                </label>
+                <button>Add This Drink!</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+    </footer>
+
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>
